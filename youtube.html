@@ -10,11 +10,12 @@
     <link rel="stylesheet" href="styles/general.css">
     <link rel="stylesheet" href="styles/sidebar.css">
     <style>
-      
     </style>
 
+    
+
   </head>
-  <body>
+  <body>              
     <div class="header">
       <div class="left-section">
         <img class="hamburger-menu" src="icons/hamburger-menu.svg">
@@ -150,11 +151,14 @@
           </div>        
         </div>
       </div>
-
+      
+      <a href="https://youtu.be/094y1Z2wpJg?si=Qv8_-gOZu35SuXwo" target="_blank">
       <div class="video-preview">
-        <div>
+        <div class="thumbnail-row">
           <img class="thumbnail" src="thumbnails/thumbnail-4.webp">
+            <video class="mini-player" src="vid/The Simplest Math Problem No One Can Solve - Collatz Conjecture.mp4" muted></video>
           <div class="video-time">22:09</div>
+          
         </div>
 
         <div class="video-info-grid">
@@ -175,6 +179,7 @@
         </div>
         
       </div>
+      </a>
 
       <div class="video-preview">
 
@@ -225,5 +230,36 @@
       </div>
     </div>
     
+    <script>
+      document.querySelector('.hamburger-menu').addEventListener('click', function() {
+        document.querySelector('.sidebar').classList.toggle('active');
+      });
+
+      document.querySelector('.search-button').addEventListener('click', function() {
+        const searchBar = document.querySelector('.search-bar');
+        if (searchBar.value) {
+          alert(`Searching for: ${searchBar.value}`);
+        } else {
+          alert('Please enter a search term.');
+        }
+      });
+
+            // ...existing code...
+      document.querySelectorAll('.thumbnail-row').forEach(row => {
+        row.addEventListener('mouseenter', () => {
+          const video = row.querySelector('.mini-player');
+          if (video) video.play();
+        });
+        row.addEventListener('mouseleave', () => {
+          const video = row.querySelector('.mini-player');
+          if (video) {
+            video.pause();
+            video.currentTime = 0;
+          }
+        });
+      });
+      // ...existing code...
+    </script>
+
   </body>
 </html>

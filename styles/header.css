@@ -13,7 +13,7 @@
   background-color: white;
   border-bottom-width: 1px;
   border-bottom-style: solid;
-  border-bottom-color: rgb(228,228,228);
+  border-bottom-color: white;
 
 }
 
@@ -49,7 +49,7 @@
   border-width: 1px;
   border-style: solid;
   border-color: rgb(192,192,192);
-  border-radius: 2px;
+  border-radius:  20px 0 0 20px;  
   box-shadow: inset 1px 2px 3px rgba(0,0,0,0.05);
   width:0;
   max-width: 400px;
@@ -69,6 +69,8 @@
   background-color: rgb(240,240,240);
   border-width: 1px;
   border-style: solid;
+  
+  border-radius: 0 20px 20px 0;
   border-color: rgb(192,192,192);
   margin-left: -1px;
   margin-right: 10px;
